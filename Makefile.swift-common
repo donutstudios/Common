@@ -1,0 +1,13 @@
+cleanPackages:
+	rm -rf Packages
+	swift package fetch
+
+cleanBuild:
+	make cleanPackages
+	swift build
+
+xcodeproj:
+	rm -rf *.xcodeproj
+	make cleanPackages
+	swift package generate-xcodeproj
+
